@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>성형외과 의료소송 자문 · 강대훈 MD, PhD</title>
+<meta name="description" content="성형외과 전문의·수부외과 세부전문의 강대훈 교수의 의료소송 의학 자문. 법무법인을 위한 진료기록 검토, 의학적 의견서, 감정서 검토와 소송 단계 자문.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="성형외과 의료소송 자문 · 강대훈 MD, PhD">
+<meta property="og:description" content="법무법인을 위한 진료기록 검토, 의학적 의견서, 감정서 검토. 판결문 분석 연구를 직접 발표한 성형외과 전문의.">
+<meta property="og:image" content="profile.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"강대훈","alternateName":"Daihun Kang","honorificSuffix":"MD, PhD","jobTitle":"성형외과 임상부교수","worksFor":{"@type":"Organization","name":"이대서울병원"},"knowsAbout":["성형외과 의료소송","의학적 의견서","진료기록 검토","수부외과"],"sameAs":["https://www.researchgate.net/profile/Daihun-Kang-3"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a case-file page. Narrow reading column, red-pen marks as the one accent. */
+:root {
+  --paper: #f7f8f9; --sheet: #ffffff; --ink: #17202b; --ink-soft: #4d5866;
+  --rule: #d9dee4; --pen: #c42f3a; --pen-soft: #fbe9ea;
+  --display: "Nanum Myeongjo", "Noto Serif KR", "Batang", serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #12161c; --sheet: #1a2028; --ink: #e6eaef; --ink-soft: #a3adb9;
+    --rule: #2e3742; --pen: #ff6b73; --pen-soft: #3a2026; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.7; word-break: keep-all;
+}
+a { color: inherit; }
+.pad { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 880px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 72px; }
+h1, h2 { font-family: var(--display); font-weight: 800; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 5.6vw, 3rem); line-height: 1.28; }
+h2 { font-size: clamp(1.35rem, 3.6vw, 1.6rem); line-height: 1.38; }
+h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
+p { margin: 0; }
+.label { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.lead { color: var(--ink-soft); max-width: 62ch; }
+section { display: grid; gap: 22px; }
+.head { display: grid; gap: 8px; }
+.card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; }
+
+/* top bar */
+.bar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: saturate(1.2) blur(6px); border-bottom: 1px solid var(--rule); padding-top: env(safe-area-inset-top, 0px); }
+.bar-in { max-width: 880px; margin: 0 auto; display: flex; align-items: center; gap: 18px; height: 56px; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.05rem; text-decoration: none; white-space: nowrap; }
+.nav { display: flex; gap: 18px; margin-left: auto; font-size: 0.9rem; }
+.nav a { text-decoration: none; color: var(--ink-soft); }
+.nav a:hover { color: var(--ink); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font: 600 0.9rem var(--body); text-decoration: none; white-space: nowrap;
+  color: #fff; background: var(--pen); border: 1px solid var(--pen); border-radius: 3px;
+  padding: 9px 18px; cursor: pointer;
+}
+.btn:hover { filter: brightness(0.94); }
+.btn.ghost { color: var(--pen); background: transparent; }
+.btn.ghost:hover { background: var(--pen-soft); filter: none; }
+.btn.sm { padding: 6px 12px; font-size: 0.84rem; }
+.btn:focus-visible, .nav a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+@media (max-width: 720px) { .nav { display: none; } .bar .btn { margin-left: auto; } }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; align-items: start; }
+.hero-text { display: grid; gap: 22px; }
+.who { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.who strong { font-size: 1.05rem; }
+.who span { color: var(--ink-soft); font-size: 0.93rem; }
+.photo { width: 100%; height: auto; aspect-ratio: 460 / 600; object-fit: cover; object-position: top; border-radius: 4px; border: 1px solid var(--rule); background: #eef0f2; display: block; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; gap: 20px; }
+  .hero .photo-box { order: -1; display: flex; gap: 14px; align-items: center; }
+  .hero .photo { width: 96px; height: 96px; aspect-ratio: 1; border-radius: 50%; object-position: center 12%; }
+  .photo-cap { display: block !important; }
+  .who strong { display: none; }
+}
+.photo-cap { display: none; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.5; }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.stat { padding: 18px 16px 18px 0; display: grid; gap: 4px; }
+.stat b { font-family: var(--display); font-size: 2.1rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--ink-soft); font-size: 0.86rem; line-height: 1.5; }
+
+/* red-pen record sample */
+.proof { padding: 22px 24px; display: grid; gap: 14px; }
+.proof .label { color: var(--pen); }
+.chart { font-family: var(--mono); font-size: 0.9rem; line-height: 1.9; border-left: 2px solid var(--rule); padding-left: 14px; display: grid; gap: 2px; }
+.chart .d { color: var(--ink-soft); margin-right: 10px; }
+mark { background: var(--pen-soft); color: var(--pen); font-weight: 500; padding: 0 3px; border-radius: 2px; }
+.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: n; }
+.notes li { counter-increment: n; display: grid; grid-template-columns: 24px 1fr; gap: 8px; font-size: 0.92rem; color: var(--ink-soft); }
+.notes li::before { content: counter(n); font-family: var(--mono); color: var(--pen); font-weight: 500; }
+.fine { font-size: 0.8rem; color: var(--ink-soft); }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.svc { padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.svc .label { color: var(--pen); }
+.svc p { color: var(--ink-soft); font-size: 0.94rem; }
+.svc ul { margin: 0; padding-left: 18px; font-size: 0.92rem; display: grid; gap: 4px; }
+.price { font-family: var(--mono); font-size: 0.8rem; border-top: 1px dashed var(--rule); padding-top: 10px; color: var(--ink-soft); }
+
+/* areas */
+.areas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.areas li { border: 1px solid var(--rule); background: var(--sheet); border-radius: 3px; padding: 6px 12px; font-size: 0.9rem; }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.steps li:last-child { border-bottom: 1px solid var(--rule); }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--mono); color: var(--pen); font-size: 0.9rem; padding-top: 2px; }
+.steps p { color: var(--ink-soft); font-size: 0.94rem; }
+
+/* rules */
+.rules { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.rules li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.rules li::before { content: "✓"; color: var(--pen); font-weight: 700; }
+.rules li.no::before { content: "✕"; }
+
+/* research + profile */
+.pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.pubs li { padding: 14px 0; border-top: 1px solid var(--rule); display: grid; gap: 2px; }
+.pubs li:last-child { border-bottom: 1px solid var(--rule); }
+.pubs .j { font-family: var(--mono); font-size: 0.8rem; color: var(--pen); }
+.pubs .t { font-size: 0.95rem; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.93rem; }
+.tl li { display: grid; grid-template-columns: 92px 1fr; gap: 10px; }
+.tl .y { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); padding-top: 2px; }
+.journals { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); line-height: 2; }
+
+/* form */
+.form { padding: 24px; display: grid; gap: 18px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field > span, legend { font-size: 0.88rem; font-weight: 500; }
+.req { color: var(--pen); margin-left: 2px; }
+input[type=text], input[type=email], input[type=tel], input[type=date], select, textarea {
+  width: 100%; font: 400 0.95rem var(--body); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 10px 12px;
+}
+textarea { min-height: 150px; resize: vertical; line-height: 1.6; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; min-width: 0; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.92rem; }
+.checks label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+input[type=checkbox], input[type=radio] { accent-color: var(--pen); width: 16px; height: 16px; }
+.hint { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55; }
+.warn { background: var(--pen-soft); border-radius: 3px; padding: 10px 12px; font-size: 0.85rem; line-height: 1.6; }
+.consent { font-size: 0.86rem; display: grid; gap: 6px; border-top: 1px dashed var(--rule); padding-top: 16px; }
+.consent label { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+.consent label input { margin-top: 4px; flex: none; }
+.err { color: var(--pen); font-size: 0.82rem; min-height: 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.status { display: none; padding: 14px 16px; border-radius: 3px; border: 1px solid var(--rule); font-size: 0.92rem; gap: 10px; }
+.status.show { display: grid; }
+.status.ok { border-color: var(--pen); }
+.status pre { white-space: pre-wrap; font-family: var(--mono); font-size: 0.8rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 10px; margin: 0; max-height: 220px; overflow: auto; }
+
+/* contact */
+.row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding: 14px 18px; }
+.row .label { min-width: 72px; }
+.row code { font-family: var(--mono); font-size: 1rem; user-select: all; flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+footer { color: var(--ink-soft); font-size: 0.8rem; border-top: 1px solid var(--rule); padding-top: 18px; display: grid; gap: 6px; }
+@media (max-width: 480px) { .wrap { padding-block: 28px 56px; gap: 56px; } .proof, .form { padding: 18px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="bar pad">
+  <div class="bar-in">
+    <a class="brand" href="#top">강대훈 · 의료소송 자문</a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#services">자문 범위</a>
+      <a href="#process">진행 방식</a>
+      <a href="#record">연구·이력</a>
+    </nav>
+    <a class="btn sm" href="#inquiry">자문 의뢰하기</a>
+  </div>
+</header>
+
+<main class="pad" id="top">
+<div class="wrap">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-text">
+      <span class="label">Medical-legal advisory · 성형외과 의료소송 의학 자문</span>
+      <h1 id="hero-title">진료기록 속 의학적 쟁점, 소송 전에 먼저 짚어 드립니다</h1>
+      <div class="who">
+        <strong>강대훈, MD, PhD</strong>
+        <span>성형외과 전문의 · 수부외과 세부전문의 · 이화여대 의대 성형외과학교실 임상부교수</span>
+      </div>
+      <p class="lead">현직 성형외과 교수가 진료기록을 직접 읽고, 사건에서 다툴 의학적 쟁점을 정리합니다. 국내 성형외과 의료소송 판결문을 분석해 국제 학술지에 발표해 온 경험으로, 재판부와 감정의가 어디를 보는지 알고 검토합니다.</p>
+      <div class="ctas">
+        <a class="btn" href="#inquiry">자문 의뢰하기</a>
+        <a class="btn ghost" href="#services">자문 범위 보기</a>
+      </div>
+    </div>
+    <div class="photo-box">
+      <img class="photo" src="profile.jpg" alt="강대훈 교수 프로필 사진" width="460" height="850">
+      <span class="photo-cap"><strong>강대훈, MD, PhD</strong><br>이대서울병원 성형외과</span>
+    </div>
+  </section>
+
+  <div class="stats" aria-label="주요 이력">
+    <div class="stat"><b>36</b><span>PubMed 등재 논문<br>대부분 단독·교신저자</span></div>
+    <div class="stat"><b>15년+</b><span>성형외과 임상 경력<br>2011년 전공의 수련 시작</span></div>
+    <div class="stat"><b>3편</b><span>의료소송 판결문 분석 연구<br>Sci Rep · PLoS One · BMC Surg</span></div>
+    <div class="stat"><b>SCIE</b><span>여러 학술지 심사위원<br>성형외과·보건정책 분야</span></div>
+  </div>
+
+  <section aria-labelledby="sample-title">
+    <div class="head">
+      <span class="label">How I read a record</span>
+      <h2 id="sample-title">기록을 이렇게 읽습니다</h2>
+    </div>
+    <div class="card proof">
+      <span class="label">검토 예시 · 가상 사례</span>
+      <div class="chart" aria-label="가상의 진료기록 발췌">
+        <div><span class="d">POD #2</span>수술 부위 <mark>경미한 발적</mark>, 통증 호소. 경구 항생제 유지.</div>
+        <div><span class="d">POD #4</span>발적 범위 증가, <mark>37.9℃</mark>. 드레싱 후 귀가.</div>
+        <div><span class="d">POD #7</span>농양 확인, 절개배농. <mark>배양검사 의뢰</mark>.</div>
+      </div>
+      <ol class="notes">
+        <li>감염을 의심할 수 있었던 첫 시점은 언제인가: POD #2와 #4 사이의 판단이 쟁점입니다.</li>
+        <li>발열과 발적 증가 시점에 배양검사나 항생제 변경이 없었던 것이 당시 의료수준에 비추어 적절했는지 검토합니다.</li>
+        <li>귀가 시 설명과 재내원 안내가 기록에 남아 있는지, 설명의무 쟁점으로 이어지는지 확인합니다.</li>
+      </ol>
+      <p class="fine">실제 사건이 아닌 설명용 예시입니다. 실제 검토는 전체 진료기록과 영상, 간호기록을 함께 봅니다.</p>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="svc-title">
+    <div class="head">
+      <span class="label">Services</span>
+      <h2 id="svc-title">사건 단계에 맞춰 필요한 만큼</h2>
+    </div>
+    <div class="services">
+      <article class="card svc">
+        <span class="label">A · 초기 검토</span>
+        <h3>사건 초기 의학 검토</h3>
+        <p>수임 여부를 정하기 전, 진료기록을 읽고 다툴 만한 의학적 쟁점이 있는지 정리합니다.</p>
+        <ul>
+          <li>진료 경과 시간순 정리</li>
+          <li>주의의무·설명의무 쟁점 메모</li>
+          <li>추가로 확보할 기록 목록</li>
+        </ul>
+        <div class="price">기록 분량에 따라 견적 · 회신 기한 협의</div>
+      </article>
+      <article class="card svc">
+        <span class="label">B · 의견서</span>
+        <h3>의학적 의견서 작성</h3>
+        <p>제출용 또는 내부 검토용 의견서를 작성합니다. 문헌 근거를 붙여 재판부가 읽을 수 있는 말로 씁니다.</p>
+        <ul>
+          <li>당시 의료수준과 표준 진료 비교</li>
+          <li>인과관계·후유장해 의학적 평가</li>
+          <li>참고 문헌과 가이드라인 첨부</li>
+        </ul>
+        <div class="price">사건 규모에 따라 견적</div>
+      </article>
+      <article class="card svc">
+        <span class="label">C · 소송 지원</span>
+        <h3>소송 단계 자문</h3>
+        <p>진행 중인 사건에서 감정과 변론 준비를 의학적으로 뒷받침합니다.</p>
+        <ul>
+          <li>감정신청사항·사실조회 질의 검토</li>
+          <li>상대방 감정서·의견서 반박 검토</li>
+          <li>변론 전 의학 쟁점 회의</li>
+        </ul>
+        <div class="price">건별 또는 시간 단위 · 협의</div>
+      </article>
+    </div>
+    <div class="ctas"><a class="btn" href="#inquiry">이 사건, 검토 가능한지 문의하기</a></div>
+  </section>
+
+  <section aria-labelledby="area-title">
+    <div class="head">
+      <span class="label">Practice areas</span>
+      <h2 id="area-title">주로 검토하는 분야</h2>
+    </div>
+    <ul class="areas">
+      <li>미용성형 수술·시술 합병증</li>
+      <li>수술 부위 감염</li>
+      <li>설명의무·동의서</li>
+      <li>안면 외상·안면골 골절</li>
+      <li>수부 외상·미세수술·수지 접합</li>
+      <li>재건 수술</li>
+      <li>피부 종양·피부암</li>
+      <li>림프부종</li>
+      <li>흉터·후유장해 평가</li>
+    </ul>
+  </section>
+
+  <section id="process" aria-labelledby="process-title">
+    <div class="head">
+      <span class="label">Process</span>
+      <h2 id="process-title">진행 방식</h2>
+    </div>
+    <ol class="steps">
+      <li><div><h3>사건 개요로 문의</h3><p>아래 의뢰 폼에 사건 개요와 필요한 자문을 남겨 주세요. 이 단계에서는 진료기록이나 환자 식별정보를 보내지 않으셔도 됩니다.</p></div></li>
+      <li><div><h3>이해충돌 확인</h3><p>관련 의료기관과 의료진을 확인해, 맡을 수 없는 사건이면 바로 알려 드립니다.</p></div></li>
+      <li><div><h3>범위·비용·기한 확정 후 기록 송부</h3><p>자문 범위와 비용, 회신 기한을 정하고 간단한 자문 약정을 주고받은 뒤 기록을 받습니다.</p></div></li>
+      <li><div><h3>검토 결과 회신</h3><p>쟁점 메모나 의견서로 회신하고, 필요하면 회의로 설명합니다. 이후 소송 단계 자문으로 이어서 볼 수 있습니다.</p></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="rules-title">
+    <div class="head">
+      <span class="label">Ground rules</span>
+      <h2 id="rules-title">이렇게 일합니다</h2>
+    </div>
+    <ul class="rules">
+      <li>의학적 판단과 의견만 드립니다. 법률 판단과 소송 전략은 변호사님의 영역으로 남겨 둡니다.</li>
+      <li>기록이 말하는 대로 씁니다. 의뢰인 측에 불리한 의학적 사실도 검토 결과에 그대로 담습니다.</li>
+      <li>받은 진료기록은 해당 사건 검토에만 쓰고, 자문이 끝나면 반환하거나 파기합니다.</li>
+      <li class="no">소속 병원 사건, 직접 관련된 의료진의 사건 등 이해충돌이 있는 사건은 맡지 않습니다.</li>
+      <li class="no">결과에 따른 성공보수는 받지 않습니다. 의견의 독립성을 지키기 위해서입니다.</li>
+    </ul>
+  </section>
+
+  <section id="record" aria-labelledby="record-title">
+    <div class="head">
+      <span class="label">Research</span>
+      <h2 id="record-title">의료소송을 연구해 온 성형외과 의사</h2>
+      <p class="lead">국내 성형외과 의료소송 판결문을 직접 모아 분석하고, 그 결과를 국제 학술지에 발표했습니다.</p>
+    </div>
+    <ul class="pubs">
+      <li><span class="j">PLoS One · 2025</span><span class="t">Legal education reform and medical litigation: Improved access but delayed justice in plastic surgery malpractice cases in South Korea</span></li>
+      <li><span class="j">Scientific Reports</span><span class="t">국내 성형외과 의료소송 판결문 분석 연구</span></li>
+      <li><span class="j">BMC Surgery</span><span class="t">국내 성형외과 의료소송 판결문 분석 연구</span></li>
+    </ul>
+    <p class="journals">그 외 게재 학술지 · Plast Reconstr Surg · J Plast Reconstr Aesthet Surg · Ann Plast Surg · Head &amp; Neck · Health Policy · Urology · Dermatol Surg · J Craniofac Surg · J Clin Med</p>
+
+    <div class="cols">
+      <div class="head">
+        <span class="label">Career</span>
+        <ul class="tl">
+          <li><span class="y">현재</span><span>이대서울병원 성형외과 임상부교수</span></li>
+          <li><span class="y">2025</span><span>수부외과 세부전문의</span></li>
+          <li><span class="y">2017</span><span>W병원 수부외과 펠로우</span></li>
+          <li><span class="y">2011–2015</span><span>영남대학교병원 성형외과 전공의 수료</span></li>
+          <li><span class="y">2010–2011</span><span>서울아산병원 인턴 수료</span></li>
+        </ul>
+      </div>
+      <div class="head">
+        <span class="label">Education</span>
+        <ul class="tl">
+          <li><span class="y">박사</span><span>가톨릭관동대학교 의과대학</span></li>
+          <li><span class="y">석사</span><span>영남대학교 의과대학</span></li>
+          <li><span class="y">학사</span><span>제주대학교 의과대학</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="inquiry" aria-labelledby="inq-title">
+    <div class="head">
+      <span class="label">Inquiry · 비공개</span>
+      <h2 id="inq-title">자문 의뢰</h2>
+      <p class="lead">남겨 주신 내용은 공개되지 않고 저에게만 전달됩니다. 영업일 기준 2일 안에 검토 가능 여부와 견적을 회신드립니다.</p>
+    </div>
+
+    <form class="card form" id="inq-form" novalidate>
+      <div class="warn">이 단계에서는 환자 실명, 주민등록번호, 진료기록 원본을 보내지 마세요. 사건 개요만으로 검토 가능 여부를 먼저 판단합니다.</div>
+
+      <div class="grid2">
+        <label class="field"><span>법무법인·사무소명<span class="req">*</span></span>
+          <input type="text" name="firm" autocomplete="organization" required></label>
+        <label class="field"><span>담당 변호사<span class="req">*</span></span>
+          <input type="text" name="lawyer" autocomplete="name" required></label>
+        <label class="field"><span>이메일<span class="req">*</span></span>
+          <input type="email" name="email" autocomplete="email" placeholder="name@lawfirm.co.kr" required></label>
+        <label class="field"><span>연락처</span>
+          <input type="tel" name="phone" autocomplete="tel" placeholder="02-000-0000"></label>
+      </div>
+
+      <div class="grid2">
+        <label class="field"><span>대리하는 측<span class="req">*</span></span>
+          <select name="side" required>
+            <option value="">선택</option>
+            <option>환자(원고) 측</option>
+            <option>의료기관(피고) 측</option>
+            <option>보험사·기타</option>
+            <option>아직 미정</option>
+          </select></label>
+        <label class="field"><span>사건 단계<span class="req">*</span></span>
+          <select name="stage" required>
+            <option value="">선택</option>
+            <option>소 제기 전·수임 검토</option>
+            <option>조정·중재</option>
+            <option>1심 진행 중</option>
+            <option>항소심 이후</option>
+            <option>형사 사건</option>
+          </select></label>
+        <label class="field"><span>관련 의료기관</span>
+          <input type="text" name="hospital" placeholder="이해충돌 확인용, 기관명만"></label>
+        <label class="field"><span>희망 회신 기한</span>
+          <input type="date" name="deadline"></label>
+      </div>
+
+      <fieldset>
+        <legend>필요한 자문<span class="req">*</span></legend>
+        <div class="checks" id="svc-checks">
+          <label><input type="checkbox" name="service" value="사건 초기 검토"> 사건 초기 검토</label>
+          <label><input type="checkbox" name="service" value="의학적 의견서"> 의학적 의견서</label>
+          <label><input type="checkbox" name="service" value="감정서·의견서 반박 검토"> 감정서 반박 검토</label>
+          <label><input type="checkbox" name="service" value="쟁점 회의"> 쟁점 회의</label>
+          <label><input type="checkbox" name="service" value="기타·상담 후 결정"> 상담 후 결정</label>
+        </div>
+      </fieldset>
+
+      <label class="field"><span>사건 개요<span class="req">*</span></span>
+        <textarea name="summary" required placeholder="시술·수술 종류, 시기, 발생한 결과, 현재 쟁점을 간단히 적어 주세요."></textarea>
+        <span class="hint">환자는 "40대 여성"처럼 식별되지 않게 적어 주세요.</span>
+      </label>
+
+      <div class="hp" aria-hidden="true"><label>회사 홈페이지<input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="consent">
+        <label><input type="checkbox" name="agree" required> <span><strong>개인정보 수집·이용에 동의합니다.<span class="req">*</span></strong><br>
+        수집 항목: 사무소명, 담당자 성명, 이메일, 연락처 · 목적: 자문 의뢰 확인과 회신 · 보관: 회신 후 1년, 자문 계약 시 계약 종료 후 3년 · 동의하지 않으실 수 있으나, 이 경우 폼으로 의뢰하실 수 없습니다(이메일 문의는 가능합니다).</span></label>
+      </div>
+
+      <p class="err" id="form-err" role="alert"></p>
+      <div><button class="btn" type="submit" id="submit-btn">의뢰 보내기</button></div>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-title">
+    <div class="head">
+      <span class="label">Contact</span>
+      <h2 id="contact-title">이메일로 바로 문의</h2>
+      <p class="lead">폼 대신 메일을 원하시면 아래 주소로 사무소명과 사건 개요를 보내 주세요.</p>
+    </div>
+    <div class="card row">
+      <span class="label">E-mail</span>
+      <code id="email">gpk1234567@naver.com</code>
+      <button class="btn ghost sm" type="button" data-copy="email">복사</button>
+    </div>
+  </section>
+
+  <footer>
+    <span>강대훈, MD, PhD · 이대서울병원 성형외과 · <a href="https://www.researchgate.net/profile/Daihun-Kang-3">ResearchGate</a></span>
+    <span>이 사이트는 법무법인 등을 위한 의학 자문 안내이며, 법률 상담이나 진료 상담을 제공하지 않습니다. 진료 예약은 소속 병원을 이용해 주세요.</span>
+  </footer>
+
+</div>
+</main>
+
+<script>
+/* Settings: paste your free Web3Forms access key here (https://web3forms.com). Until then the form falls back to a copy-and-email message. */
+var WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+var CONTACT_EMAIL = "gpk1234567@naver.com";
+
+function copyText(text, btn) {
+  var reset = function (t) { btn.textContent = t; setTimeout(function () { btn.textContent = btn.dataset.label || '복사'; }, 1600); };
+  btn.dataset.label = btn.dataset.label || btn.textContent;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { reset('복사됨'); }, function () { reset('직접 선택해 복사하세요'); });
+    } else { reset('직접 선택해 복사하세요'); }
+  } catch (e) { reset('직접 선택해 복사하세요'); }
+}
+document.querySelectorAll('button[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () { copyText(document.getElementById(btn.dataset.copy).textContent.trim(), btn); });
+});
+
+(function () {
+  var form = document.getElementById('inq-form');
+  var errEl = document.getElementById('form-err');
+  var status = document.getElementById('status');
+  var submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('input', function () { errEl.textContent = ''; });
+  form.addEventListener('change', function () { errEl.textContent = ''; });
+
+  function collect() {
+    var fd = new FormData(form);
+    return {
+      firm: (fd.get('firm') || '').trim(), lawyer: (fd.get('lawyer') || '').trim(),
+      email: (fd.get('email') || '').trim(), phone: (fd.get('phone') || '').trim(),
+      side: fd.get('side') || '', stage: fd.get('stage') || '',
+      hospital: (fd.get('hospital') || '').trim(), deadline: fd.get('deadline') || '',
+      services: fd.getAll('service').join(', '), summary: (fd.get('summary') || '').trim(),
+      agree: !!fd.get('agree'), botcheck: fd.get('botcheck') || ''
+    };
+  }
+  function validate(d) {
+    if (!d.firm) return ['firm', '법무법인·사무소명을 입력해 주세요.'];
+    if (!d.lawyer) return ['lawyer', '담당 변호사 성함을 입력해 주세요.'];
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return ['email', '회신받을 이메일 주소를 확인해 주세요.'];
+    if (!d.side) return ['side', '대리하는 측을 선택해 주세요.'];
+    if (!d.stage) return ['stage', '사건 단계를 선택해 주세요.'];
+    if (!d.services) return ['service', '필요한 자문을 하나 이상 골라 주세요.'];
+    if (d.summary.length < 20) return ['summary', '사건 개요를 20자 이상 적어 주세요.'];
+    if (!d.agree) return ['agree', '개인정보 수집·이용에 동의해 주세요.'];
+    return null;
+  }
+  function asText(d) {
+    return [
+      '[의료소송 자문 의뢰]',
+      '사무소: ' + d.firm, '담당 변호사: ' + d.lawyer, '이메일: ' + d.email, '연락처: ' + (d.phone || '-'),
+      '대리하는 측: ' + d.side, '사건 단계: ' + d.stage, '관련 의료기관: ' + (d.hospital || '-'),
+      '희망 회신 기한: ' + (d.deadline || '-'), '필요한 자문: ' + d.services, '', '사건 개요:', d.summary
+    ].join('\n');
+  }
+  function showFallback(d) {
+    var text = asText(d);
+    status.className = 'status show';
+    status.innerHTML = '';
+    var p = document.createElement('p');
+    p.textContent = '지금은 폼 전송이 되지 않습니다. 아래 내용을 복사해 ' + CONTACT_EMAIL + ' 로 보내 주세요.';
+    var pre = document.createElement('pre'); pre.textContent = text;
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn ghost sm'; b.textContent = '내용 복사';
+    b.addEventListener('click', function () { copyText(text, b); });
+    var wrap = document.createElement('div'); wrap.appendChild(b);
+    status.append(p, pre, wrap);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = collect();
+    if (d.botcheck) return;
+    var bad = validate(d);
+    if (bad) {
+      errEl.textContent = bad[1];
+      var el = form.querySelector('[name="' + bad[0] + '"]'); if (el) el.focus();
+      return;
+    }
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('YOUR_') === 0) { showFallback(d); return; }
+
+    submitBtn.disabled = true; submitBtn.textContent = '보내는 중…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: '[자문 의뢰] ' + d.firm + ' · ' + d.lawyer,
+        from_name: d.firm + ' ' + d.lawyer,
+        replyto: d.email,
+        botcheck: '',
+        '사무소': d.firm, '담당 변호사': d.lawyer, '이메일': d.email, '연락처': d.phone || '-',
+        '대리하는 측': d.side, '사건 단계': d.stage, '관련 의료기관': d.hospital || '-',
+        '희망 회신 기한': d.deadline || '-', '필요한 자문': d.services, '사건 개요': d.summary
+      })
+    }).then(function (r) { return r.json(); }).then(function (res) {
+      if (res && res.success) {
+        form.querySelectorAll('input, select, textarea, button[type=submit]').forEach(function (x) { x.disabled = true; });
+        status.className = 'status show ok';
+        status.textContent = '의뢰가 접수되었습니다. ' + d.email + ' 로 영업일 기준 2일 안에 회신드리겠습니다.';
+        submitBtn.textContent = '접수됨';
+      } else { throw new Error('fail'); }
+    }).catch(function () {
+      submitBtn.disabled = false; submitBtn.textContent = '의뢰 보내기';
+      showFallback(d);
+    });
+  });
+})();
+</script>
+</body>
+</html>
