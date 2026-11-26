@@ -478,8 +478,8 @@ footer { color: var(--ink-soft); font-size: 0.8rem; border-top: 1px solid var(--
 </main>
 
 <script>
-/* Settings: paste your free Web3Forms access key here (https://web3forms.com). Until then the form falls back to a copy-and-email message. */
-var WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+/* 의뢰 폼은 같은 사이트의 /api/inquiry(Cloudflare Pages Function)로 보내고, 그곳이 이메일로 전달합니다.
+   메일 설정 전이거나 전송이 안 되면 '내용을 복사해 메일로 보내기' 안내로 대신합니다. */
 var CONTACT_EMAIL = "gpk1234567@naver.com";
 
 function copyText(text, btn) {
@@ -557,24 +557,13 @@ document.querySelectorAll('button[data-copy]').forEach(function (btn) {
       var el = form.querySelector('[name="' + bad[0] + '"]'); if (el) el.focus();
       return;
     }
-    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('YOUR_') === 0) { showFallback(d); return; }
-
     submitBtn.disabled = true; submitBtn.textContent = '보내는 중…';
-    fetch('https://api.web3forms.com/submit', {
+    fetch('/api/inquiry', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: '[자문 의뢰] ' + d.firm + ' · ' + d.lawyer,
-        from_name: d.firm + ' ' + d.lawyer,
-        replyto: d.email,
-        botcheck: '',
-        '사무소': d.firm, '담당 변호사': d.lawyer, '이메일': d.email, '연락처': d.phone || '-',
-        '대리하는 측': d.side, '사건 단계': d.stage, '관련 의료기관': d.hospital || '-',
-        '희망 회신 기한': d.deadline || '-', '필요한 자문': d.services, '사건 개요': d.summary
-      })
+      body: JSON.stringify(d)
     }).then(function (r) { return r.json(); }).then(function (res) {
-      if (res && res.success) {
+      if (res && res.ok) {
         form.querySelectorAll('input, select, textarea, button[type=submit]').forEach(function (x) { x.disabled = true; });
         status.className = 'status show ok';
         status.textContent = '의뢰가 접수되었습니다. ' + d.email + ' 로 영업일 기준 2일 안에 회신드리겠습니다.';
